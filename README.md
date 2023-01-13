@@ -22,5 +22,5 @@ npm run seed
 Then run the app in production mode:
 
 ```sh
-npm start
+npm run start
 ```
