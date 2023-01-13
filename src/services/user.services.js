@@ -88,6 +88,14 @@ class UserServices {
       throw error;
     }
   }
+  static async createManyData(data) {
+    try {
+      const result = UserData.bulkCreate(data);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 module.exports = UserServices;

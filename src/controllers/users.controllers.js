@@ -38,5 +38,18 @@ const createUser = async (req, res, next) => {
     res.status(400).json({ error, status: false });
   }
 };
+const createManyUsers = async (req, res, next) => {
+  try {
+    const newUser = req.body;
+    const result = await UserServices.createManyData(newUser);
+    if (result) {
+      res.status(200).json(result);
+    } else {
+      res.status(400).json({ error: result, status: false });
+    }
+  } catch (error) {
+    res.status(400).json({ error, status: false });
+  }
+};
 
-module.exports = { findUser, searchUser, createUser };
+module.exports = { findUser, searchUser, createUser, createManyUsers };
